@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>고독한 예지방 퀴즈</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div class="grid text-center">
+        <h1 class="text-xl mb-3">고독방과 <span class="text-red-600">동일한</span><br>닉네임을 입력하세요</h1>
+        <div th:if="${error}" th:text="${error}" style="color: red;"></div>
+
+        <form th:action="@{/start}" th:object="${user}" method="post">
+            <input class="border-2 border-black p-1 rounded-lg text-center" type="text" th:field="*{name}" placeholder="닉네임 입력" required/>
+
+            <button type="submit" class="bg-black text-white p-1 px-3 rounded-lg">시작</button>
+        </form>
+
+        <div class="text-sm mt-5">
+            [ 실격 사유 ]
+            <br>1. 중복 참여
+            <br>2. 시스템 악용
+            <br>3. 부정 행위
+            <br>그 외 관리자 판단
+        </div>
+    </div>
+</body>
+</html>
