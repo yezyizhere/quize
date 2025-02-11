@@ -2,9 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>퀴즈 진행</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="flex justify-center items-center min-h-screen bg-gray-100">
@@ -15,10 +14,14 @@
     <img th:src="${question.imageUrl}" alt="Question Image" class="w-48 h-auto mb-4 rounded-lg">
   </div>
 
-  <form th:action="@{/quiz}" method="post" class="flex flex-col gap-2">
+  <!-- 타이머 표시 -->
+  <div id="timer" class="text-center text-lg font-bold mb-4">남은 시간: 10초</div>
+
+  <!-- id="quizForm"을 추가 -->
+  <form id="quizForm" th:action="@{/quiz}" method="post" class="flex flex-col gap-2">
     <ul class="flex flex-col gap-3">
       <li th:each="choice, iterStat : ${question.choices}">
-        <!-- `peer`를 input에 적용하고 label이 올바르게 따라오도록 수정 -->
+        <!-- radio 버튼 -->
         <input type="radio" name="selected" th:value="${iterStat.index}" th:id="'choice-' + ${iterStat.index}"
                class="hidden peer" required/>
         <label th:for="'choice-' + ${iterStat.index}"
@@ -36,5 +39,34 @@
   </form>
   <p th:if="${feedback}" th:text="${feedback}" class="mt-4 text-center text-red-500 font-semibold"></p>
 </div>
+
+<script>
+  let timeLeft = 10;
+  const timerElement = document.getElementById('timer');
+  const quizForm = document.getElementById('quizForm');
+
+  const countdown = setInterval(() => {
+      timeLeft--;
+      timerElement.innerText = `남은 시간: ${timeLeft}초`;
+
+      if (timeLeft <= 0) {
+          clearInterval(countdown);
+          // 타이머 만료 시 모든 라디오 버튼을 비활성화하고 선택 상태 해제
+          const radios = document.querySelectorAll('input[name="selected"]');
+          radios.forEach((radio) => {
+              radio.checked = false;
+              radio.disabled = true;
+          });
+          // 자동 오답(예를 들어 인덱스 4, 즉 "모르겠음"으로 처리) 숨겨진 입력 추가
+          const hiddenInput = document.createElement('input');
+          hiddenInput.type = 'hidden';
+          hiddenInput.name = 'selected';
+          hiddenInput.value = '4'; // 정답 선택지(인덱스 0~3)와 달리 4번은 오답 처리
+          quizForm.appendChild(hiddenInput);
+          // 폼 제출: 사용자가 타이머 만료 후 선택한 값은 이미 제거되었으므로 자동 오답이 적용됨
+          quizForm.submit();
+      }
+  }, 1000);
+</script>
 </body>
 </html>
