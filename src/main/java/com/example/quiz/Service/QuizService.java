@@ -46,7 +46,7 @@ public class QuizService {
                 "붕어빵 가장 먼저 먹는 부위는?",
                 Arrays.asList("꼬리","지느러미","몸통","머리", "모르겠음"),
                 3,
-                "https://search.pstatic.net/common?type=f&size=206x206&quality=95&direct=true&src=http%3A%2F%2Fshop1.phinf.naver.net%2F20200806_20%2F1596683152967IlYFi_JPEG%2F32818768910658433_478020071.jpeg"
+                "#"
                 ));
 
         return list;
