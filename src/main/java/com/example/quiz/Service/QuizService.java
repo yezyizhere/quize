@@ -15,36 +15,36 @@ public class QuizService {
 
         // 문제 1
         list.add(new QuizQuestion(
-                "문제 1번의 예시",
-                Arrays.asList("1번 답안","2번 답안","3번 답안","4번 답안", "모르겠음"),
-        0,
-                "https://search.pstatic.net/common?type=f&size=206x206&quality=95&direct=true&src=http%3A%2F%2Fshop1.phinf.naver.net%2F20210418_136%2F1618674583729CsTje_JPEG%2F54810200578891611_-1854514124.jpg"
+                "호텔방에 못 들어간 이유는?",
+                Arrays.asList("키를 잃어버려서","옆방이어서","다른층이어서","내부 청소중이어서", "모르겠음"),
+                2,
+                "https://github.com/yezyizhere/quize/blob/main/%ED%80%B4%EC%A6%88%20%EC%82%AC%EC%A7%84/1%EB%B2%88.png?raw=true"
                 ));
         // 문제 2
         list.add(new QuizQuestion(
-                "문제 2번의 예시",
-                Arrays.asList("1번 답안","2번 답안","3번 답안","4번 답안", "모르겠음"),
-                1,
-                "https://search.pstatic.net/common?type=f&size=206x206&quality=95&direct=true&src=http%3A%2F%2Fshop1.phinf.naver.net%2F20210420_119%2F1618917792831Sb33v_JPEG%2F55053401463382237_1240304716.jpeg"
+                "이 다음 놀란 이유는?",
+                Arrays.asList("쥐를 봐서","풍선이 터져서","핸드폰을 떨어트려서","비둘기 때문에", "모르겠음"),
+                3,
+                "https://github.com/yezyizhere/quize/blob/main/%ED%80%B4%EC%A6%88%20%EC%82%AC%EC%A7%84/2%EB%B2%88.png?raw=true"
                 ));
         // 문제 3
         list.add(new QuizQuestion(
-                "문제 3번의 예시",
-                Arrays.asList("1번 답안","2번 답안","3번 답안","4번 답안", "모르겠음"),
-                2,
-                "https://search.pstatic.net/common?type=f&size=206x206&quality=95&direct=true&src=http%3A%2F%2Fshop1.phinf.naver.net%2F20200724_215%2F1595581349044jAHJA_JPEG%2F31716943718608376_1431937637.jpeg"
+                "사진 업로드 날짜는?",
+                Arrays.asList("2024-09-22","2023-08-11","2024-07-23","2024-10-10", "모르겠음"),
+                0,
+                "https://github.com/yezyizhere/quize/blob/main/%ED%80%B4%EC%A6%88%20%EC%82%AC%EC%A7%84/240922-1.jpg?raw=true"
                 ));
         // 문제 4
         list.add(new QuizQuestion(
-                "문제 4번의 예시",
-                Arrays.asList("1번 답안","2번 답안","3번 답안","4번 답안", "모르겠음"),
+                "뭘 먹었을까요?",
+                Arrays.asList("랍스타","광어","참치","방어", "모르겠음"),
                 3,
-                "https://search.pstatic.net/common?type=f&size=206x206&quality=95&direct=true&src=http%3A%2F%2Fshop1.phinf.naver.net%2F20210522_279%2F1621673915289mxlar_JPEG%2F57809532425488875_-1425368071.jpg"
+                "https://github.com/yezyizhere/quize/blob/main/%ED%80%B4%EC%A6%88%20%EC%82%AC%EC%A7%84/4%EB%B2%88.png?raw=true"
                 ));
         // 문제 5
         list.add(new QuizQuestion(
-                "문제 5번의 예시",
-                Arrays.asList("1번 답안","2번 답안","3번 답안","4번 답안", "모르겠음"),
+                "붕어빵 가장 먼저 먹는 부위는?",
+                Arrays.asList("꼬리","지느러미","몸통","머리", "모르겠음"),
                 3,
                 "https://search.pstatic.net/common?type=f&size=206x206&quality=95&direct=true&src=http%3A%2F%2Fshop1.phinf.naver.net%2F20200806_20%2F1596683152967IlYFi_JPEG%2F32818768910658433_478020071.jpeg"
                 ));
